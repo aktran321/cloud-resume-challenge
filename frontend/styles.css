@@ -1,0 +1,32 @@
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+.container {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1,
+h2,
+h3 {
+  color: #0056b3;
+}
+.header {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.view-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.9em;
+  color: #777;
+}
+.section {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-top: 2px solid #0056b3;
+}

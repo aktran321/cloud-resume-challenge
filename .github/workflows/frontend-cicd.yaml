@@ -1,27 +1,32 @@
-name: copy to s3 CI/CD
+name: Copy to S3 CI/CD
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Set up AWS CLI
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
         with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: us-east-1
+          node-version: '20'
+
+      - name: Checkout repo
+        uses: actions/checkout@v4 # Use the latest version supporting Node.js 20
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2.8.0 # Use the latest version
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
     
       - name: Print message
         run: |
-            echo "Copying files to s3..."
-
-            aws s3 cp sql-files s3://cloud-resume-challenge-andy-tran --recursive
-
-            echo "Done"
+          echo "Copying files to s3..."
+          aws s3 cp sql-files s3://cloud-resume-challenge-andy-tran --recursive
+          echo "Done"

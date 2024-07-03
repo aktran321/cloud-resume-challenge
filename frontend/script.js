@@ -1,6 +1,6 @@
 async function updateCounter() {
   try {
-    let response = await fetch("https://bpv3ha6vakbpgfa7gazsibw6qa0ozuvv.lambda-url.us-east-1.on.aws/");
+    let response = await fetch("https://g6thr4od50.execute-api.us-east-1.amazonaws.com/views");
     let data = await response.json();
     const counter = document.getElementById("view-count");
     counter.innerText = data.views;

@@ -17,7 +17,8 @@ def lambda_handler(event, context):
         
         # Increment the view count
         views += 1
-        print("testing aws commit")
+        print("pushed with terraform!")
+        print(views)
         
         # Update the view count in DynamoDB
         table.put_item(Item={
@@ -25,9 +26,13 @@ def lambda_handler(event, context):
             "views": views
         })
         
-        # Return the updated view count
+        # Return the updated view count with headers
         return {
             "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
             "body": json.dumps({"views": views})
         }
     
@@ -35,5 +40,9 @@ def lambda_handler(event, context):
         print(f"Error: {e}")
         return {
             "statusCode": 500,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
             "body": json.dumps({"error": str(e)})
         }

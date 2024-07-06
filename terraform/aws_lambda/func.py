@@ -17,8 +17,7 @@ def lambda_handler(event, context):
         
         # Increment the view count
         views += 1
-        print("pushed with terraform!")
-        print(views)
+        print("testing aws commit")
         
         # Update the view count in DynamoDB
         table.put_item(Item={

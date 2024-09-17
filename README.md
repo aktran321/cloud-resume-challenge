@@ -4,10 +4,6 @@ This project is part of the Cloud Resume Challenge, showcasing the use of multip
 
 ![AWS Cloud Resume Architecture](aws-arch.png)
 
-For detailed steps, refer to my [blog post](https://dev.to/aktran321/aws-cloud-resume-challenge-37md).
-
-To check it out, [click here!](https://andytran.click)
-
 ## Features
 
 - Static Website on S3
@@ -16,3 +12,9 @@ To check it out, [click here!](https://andytran.click)
 - View Counter with DynamoDB and Lambda
 - CI/CD Pipeline with GitHub Actions
 - Infrastructure as Code with Terraform
+
+For detailed steps, refer to my [blog post](https://dev.to/aktran321/aws-cloud-resume-challenge-37md).
+
+To check it out, [click here!](https://andytran.click)
+
+
